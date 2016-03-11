@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html class="no-js" lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<title>Visminer Web</title>
+	<script name="jquery/jquery.js" library="primefaces" />
+	
+	<link rel="StyleSheet" type="text/css"
+            href="resources/visminerweb.css" />
+</h:head>
+<h:body>
+<h:form id ="slider">
+
+	
+    
+
+</h:form>
+	
+<p:megaMenu orientation="#{megaMenuView.orientation}" style="margin-top:20px">
+    
+ 	<p:submenu label="Snapshot">
+ 		<p:column>
+ 			
+ 			<h:panelGrid columns="1" style="margin-bottom: 10px">
+	        <h:outputText id="displayRange" value="Between commits #{sliderView.number6} and #{sliderView.number7}" />
+	        <p:slider for="txt6,txt7" display="displayRange" style="width: 400px" range="true" displayTemplate="Between commits {min} and {max}" />
+		    </h:panelGrid>
+		    <h:inputHidden id="txt6" value="#{sliderView.number6}" />
+		    <h:inputHidden id="txt7" value="#{sliderView.number7}" />
+		    <p:commandButton value="Submit"/>
+ 			
+ 		</p:column>
+ 	
+ 	</p:submenu>
+ 	
+    
+ 
+    <p:submenu label="Estratégias">
+ 
+        <p:column>
+        	
+            <p:submenu label="Básicas">
+                <p:menuitem value="Diferencial" url="#" />
+                <p:menuitem value="Temporal" url="#" />
+            </p:submenu>
+        
+        </p:column>
+    </p:submenu>
+ 
+    <p:submenu label="Visualização" >
+        <p:column>
+            <p:submenu label="Simples">
+                <p:menuitem value="Visualização 1" url="#" />
+                <p:menuitem value="Vizualização 2" url="#" />
+            </p:submenu>
+            
+        </p:column>
+ 	</p:submenu>
+ 
+    <p:submenu label="Métricas">
+        <p:column>
+            <p:submenu label="Inicial">
+                <p:menuitem value="SLOC" url="#" />
+                <p:menuitem value="CC" url="#" />
+            </p:submenu>
+        </p:column>   
+    </p:submenu>
+ 
+    <p:menuitem value="Quit" url="#" icon="ui-icon-close" />
+</p:megaMenu>
+</h:body>
+</html>

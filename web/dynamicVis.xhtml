@@ -64,18 +64,21 @@
     <p:submenu label="Métricas">
         <p:column>
             <p:submenu label="Inicial">
-                <p:menuitem value="SLOC" onclick="chooseSLOC('SLOC.json');mapGenerator();" ajax="false" url="#" />
-                <p:menuitem value="CC" onclick="chooseCC('flare.json');mapGenerator()" ajax="false" url="#" />
+                <p:menuitem value="SLOC" onclick="chooseSLOC('SLOC.json');mapGenerator();" url="#" />
+                <p:menuitem value="CC" onclick="chooseCC('flare.json');mapGenerator()" url="#" />
+                <p:separator/>
+                
             </p:submenu>
         </p:column>   
     </p:submenu>
- 
     <p:menuitem value="Quit" url="#" icon="ui-icon-close" />
 </p:megaMenu>
 
 
 <p:layoutUnit position="center" id="display" >
-
+    <h:form>
+	<p:commandButton value="Reset" ajax="false" style="margin-top: 17px;"/>
+	</h:form>
 	<style>
 
                     
@@ -112,7 +115,7 @@
 		                }
 		                
 						function chooseSLOC(choice){
-		                	
+							
 							
 		                	metric = choice;
 		                	
@@ -124,7 +127,7 @@
 						
 						function mapGenerator(){
 							
-							
+						    
 							
 							var margin = {top: 40, right: 10, bottom: 10, left: 10},
 						    width = 960 - margin.left - margin.right,
